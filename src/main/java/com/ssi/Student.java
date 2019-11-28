@@ -1,18 +1,29 @@
 package com.ssi;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 
 @Entity
+@Table(name="studinfo")
 public class Student {
-	@Id
-	private int rno;
-	private String name;
-	private String mobile;
-	private String email;
 	
+	@Id
+	@Column(name="rollno")
+	private int rno;
+	
+	@Column(name="studname")
+	private String name;
+	
+	@Column(name="cellno")
+	private String mobile;
+	
+	@Column(name="mailid")
+	private String email;
+
 	public Student() {
 		super();
 	}
@@ -47,5 +58,6 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 		
 }

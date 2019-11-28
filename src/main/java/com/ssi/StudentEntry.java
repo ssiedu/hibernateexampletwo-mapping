@@ -11,7 +11,7 @@ public class StudentEntry {
 		Configuration config=new Configuration().configure();
 		SessionFactory sessionFactory=config.buildSessionFactory();
 		Session session=sessionFactory.openSession();
-		Student student=new Student(111,"AAA","9090933445","abc@gmail.com");
+		Student student=new Student(113,"CCC","8898966778","xyz@gmail.com");
 		Transaction tr=session.beginTransaction();
 		session.save(student);
 		tr.commit();

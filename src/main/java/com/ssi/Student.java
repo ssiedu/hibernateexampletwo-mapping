@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 
@@ -11,17 +12,22 @@ import javax.persistence.Table;
 @Table(name="studinfo")
 public class Student {
 	
+	//private int semester;
+	@Transient
+	private  String University="DAVV";
+	
 	@Id
 	@Column(name="rollno")
 	private int rno;
 	
-	@Column(name="studname")
+	@Column(name="studname", nullable=false, length=50)
 	private String name;
 	
-	@Column(name="cellno")
+	@Column(name="cellno", length=16)
 	private String mobile;
 	
-	@Column(name="mailid")
+	@Transient
+	@Column(name="mailid", length=256)
 	private String email;
 
 	public Student() {

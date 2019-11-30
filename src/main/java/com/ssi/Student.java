@@ -1,12 +1,59 @@
 package com.ssi;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+@Entity
+public class Student {
+	
+	@EmbeddedId
+	//@Id
+	private Name name;
+	private String email;
+	private String mobile;
+	private Address address;
+	
+	public Name getName() {
+		return name;
+	}
+	public void setName(Name name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public Student(Name name, String email, String mobile, Address address) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.mobile = mobile;
+		this.address = address;
+	}
+	
+	
+}
 
+
+/*
 
 @Entity
 @Table(name="studinfo")
@@ -15,6 +62,8 @@ public class Student {
 	//private int semester;
 	@Transient
 	private  String University="DAVV";
+	
+	private Address address;
 	
 	@Id
 	@Column(name="rollno")
@@ -67,3 +116,4 @@ public class Student {
 	
 		
 }
+*/

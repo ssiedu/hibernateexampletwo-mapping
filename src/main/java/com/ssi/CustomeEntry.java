@@ -16,8 +16,9 @@ public class CustomeEntry {
 	
 	Transaction tr=session.beginTransaction();
 	
-	Customer c1=new Customer("Amit","Jain","Indore");
-	Customer c2=new Customer("Raj","Jain", "Bhopal");
+	Customer c1=new Customer("Amit","Jain",new Address("123","ABRoad","Indore"));
+	
+	Customer c2=new Customer("Raj","Jain", new Address("223","MGRoad","Bhopal"));
 	
 	session.save(c1);
 	session.save(c2);

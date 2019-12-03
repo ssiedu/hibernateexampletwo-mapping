@@ -38,6 +38,11 @@ public class Address {
 	public Address() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "Address [hno=" + hno + ", street=" + street + ", city=" + city
+				+ "]";
+	}
 	
 	
 	

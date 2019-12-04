@@ -14,5 +14,6 @@
         <property name="format_sql">true</property>
         <!-- <mapping class="com.ssi.Student"/> -->
         <!-- <mapping class="com.ssi.Customer"/> -->
+        <mapping class="com.ssi.Emp"/>
     </session-factory>
 </hibernate-configuration>

@@ -21,7 +21,12 @@ public class ListOfObjectArrayDemo {
 		studData.add(studThreeInfo);
 		
 		
-		
+		for(Object ar[]:studData){
+			for(Object obj:ar){
+				System.out.println(obj);
+			}
+			System.out.println("________________________________");
+		}
 		
 		
 	}

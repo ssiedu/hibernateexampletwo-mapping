@@ -8,43 +8,33 @@ import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 
-public class QBCProjectionDemoTwo {
-	public static void main(String args[]){
+public class QBCGroupingDemo {
 
+	public static void main(String[] args) {
 		Session session=Utility.getSessionFactory().openSession();
 		Criteria criteria=session.createCriteria(Emp.class);
-		//fetch selected columns (more than 1)
+		
+		Projection proj1=Projections.groupProperty("address.city");
+		Projection proj2=Projections.sum("sal");
 		
 		ProjectionList pList=Projections.projectionList();
-		Projection pr1=Projections.property("ename");
-		Projection pr2=Projections.property("sal");
-		pList.add(pr1);
-		pList.add(pr2);
+		pList.add(proj1);
+		pList.add(proj2);
+		
 		criteria.setProjection(pList);
-
+		
 		List<Object[]> list=criteria.list();
 		
-		for(Object ar[]:list){
-			for(Object obj:ar){
-				System.out.println(obj);
+
+		for(Object objAr[]:list){
+			for(Object item:objAr){
+				System.out.println(item);
 			}
-			System.out.println("_______________________");
+			System.out.println("_________________________");
 		}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
+		session.close();
 	}
+
 }

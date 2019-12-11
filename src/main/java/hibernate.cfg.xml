@@ -12,10 +12,7 @@
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
-        <!-- <mapping class="com.ssi.Student"/> -->
-        <!-- <mapping class="com.ssi.Customer"/> -->
-        <!-- <mapping class="com.ssi.Emp"/> -->
-        <mapping class="com.ssi.Product"/>
-        <mapping class="com.ssi.City"/>
+        <mapping class="com.ssi.Account"/>
+        <mapping class="com.ssi.Card"/>
     </session-factory>
 </hibernate-configuration>

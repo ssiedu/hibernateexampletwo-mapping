@@ -14,5 +14,6 @@
         <property name="format_sql">true</property>
         <mapping class="com.ssi.Account"/>
         <mapping class="com.ssi.Card"/>
+        <mapping class="com.ssi.Locker"/>
     </session-factory>
 </hibernate-configuration>

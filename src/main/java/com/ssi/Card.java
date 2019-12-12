@@ -3,6 +3,7 @@ package com.ssi;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Card {
@@ -11,6 +12,9 @@ public class Card {
 	private String ctype;
 	@Column(name="wlimit")
 	private int limit;
+	
+	@OneToOne(mappedBy="card")
+	private Account account;
 	
 	public String getCno() {
 		return cno;
@@ -47,6 +51,12 @@ public class Card {
 	public String toString() {
 		return "Card [cno=" + cno + ", ctype=" + ctype + ", limit=" + limit
 				+ "]";
+	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 	
 }

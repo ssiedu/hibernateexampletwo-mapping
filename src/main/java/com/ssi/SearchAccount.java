@@ -1,5 +1,7 @@
 package com.ssi;
 
+import java.util.List;
+
 import org.hibernate.Session;
 
 public class SearchAccount {
@@ -12,8 +14,11 @@ public class SearchAccount {
 		
 		System.out.println(account.getAno());
 		System.out.println(account.getCname());
-		System.out.println("Now We Ask Hibernate For Card Details : ");
 		System.out.println(account.getCard());
+		List<Locker> lockers=account.getLockers();
+		for(Locker locker:lockers){
+			System.out.println(locker);
+		}
 		
 		session.close();
 

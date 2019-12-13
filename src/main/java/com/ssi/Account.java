@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -19,6 +20,10 @@ public class Account {
 	
 	@OneToMany(mappedBy="account")
 	private List<Locker> lockers;
+	
+	@ManyToMany(mappedBy="accounts")
+	private List<Nominee> nominees;
+	
 	
 	public int getAno() {
 		return ano;
@@ -75,6 +80,12 @@ public class Account {
 	public Account(int ano) {
 		super();
 		this.ano = ano;
+	}
+	public List<Nominee> getNominees() {
+		return nominees;
+	}
+	public void setNominees(List<Nominee> nominees) {
+		this.nominees = nominees;
 	}
 	
 	
